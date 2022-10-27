@@ -11,9 +11,9 @@ export const MyPosts = () => {
             </div>
 
             <div className='posts'>
-                <Post />
-                <Post />
-                <Post />
+                <Post message='Hi! How are you?' likesCount={21} />
+                <Post message='My first post' likesCount={3}/>
+
 
             </div>
         </div>

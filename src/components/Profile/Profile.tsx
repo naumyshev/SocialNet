@@ -5,7 +5,7 @@ import {MyPosts} from "./MyPosts/MyPosts";
 
 export const Profile = () => {
     return (
-        <div className={s.content}>
+        <div>
             <div>
                 <img src={lake} alt=""/>
             </div>
