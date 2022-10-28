@@ -4,7 +4,7 @@ import s from './Dialogs.module.css'
 export const Dialogs = () => {
     return (
         <div>
-            Dialogs
+            <h1>Dialogs</h1>
         </div>
     );
 };
