@@ -2,7 +2,8 @@ import React from 'react';
 import s from "./Post.module.css";
 import avatar from '../../../../pic/avatar1.jpg'
 
-type PostPropsType = {
+export type PostPropsType = {
+    id: number
     message: string
     likesCount: number
 }
