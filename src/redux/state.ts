@@ -20,7 +20,9 @@ export const state: StateType = {
     profilePage: {
         posts: [
             {id: 1, message: 'Hi! How are you?', likesCount: 12},
-            {id: 2, message: 'My first post', likesCount: 1}
+            {id: 2, message: 'My first post', likesCount: 1},
+            {id: 3, message: 'Yo!', likesCount: 1},
+            {id: 4, message: 'Yo! Yo!', likesCount: 1}
         ]
     },
     dialogsPage: {
@@ -40,4 +42,9 @@ export const state: StateType = {
             {id: 5, message: 'Yo!'},
         ]
     }
+}
+
+export const addPost = (postMessage: string) => {
+    const newPost = {id: 5, message: postMessage, likesCount: 0}
+    state.profilePage.posts.push(newPost)
 }
