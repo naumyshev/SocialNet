@@ -1,9 +1,9 @@
 import React from 'react';
 import s from "./MyPosts.module.css";
-import {Post, PostPropsType} from "./Post/Post";
+import {Post, PostType} from "./Post/Post";
 
 type MyPostsPropsType = {
-    posts: Array<PostPropsType>
+    posts: Array<PostType>
     addPost: (postMessage: string) => void
 }
 
@@ -15,9 +15,9 @@ export const MyPosts = (props: MyPostsPropsType) => {
 
     const addPost = () => {
         if (newPostElement.current) {
-            debugger
             let text = newPostElement.current.value
             props.addPost(text)
+            newPostElement.current.value = ''
         }
     }
 

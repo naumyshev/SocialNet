@@ -1,9 +1,11 @@
-import {PostPropsType} from "../components/Profile/MyPosts/Post/Post";
+import {PostType} from "../components/Profile/MyPosts/Post/Post";
 import {DialogItemPropsType} from "../components/Dialogs/DialogItem/DialogItem";
 import {MessagePropsType} from "../components/Dialogs/Message/Message";
+import {rerenderEntireTree} from "../render";
+
 
 export type ProfilePageType = {
-    posts: Array<PostPropsType>
+    posts: Array<PostType>
 }
 
 export type DialogPageType = {
@@ -11,12 +13,12 @@ export type DialogPageType = {
     messages: Array<MessagePropsType>
 }
 
-export type StateType = {
+export type RootStateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogPageType
 }
 
-export const state: StateType = {
+export const state: RootStateType = {
     profilePage: {
         posts: [
             {id: 1, message: 'Hi! How are you?', likesCount: 12},
@@ -45,6 +47,7 @@ export const state: StateType = {
 }
 
 export const addPost = (postMessage: string) => {
-    const newPost = {id: 5, message: postMessage, likesCount: 0}
+    const newPost: PostType = {id: 5, message: postMessage, likesCount: 0}
     state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
 }
