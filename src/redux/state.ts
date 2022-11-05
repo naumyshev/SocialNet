@@ -1,8 +1,10 @@
 import {PostType} from "../components/Profile/MyPosts/Post/Post";
 import {DialogItemPropsType} from "../components/Dialogs/DialogItem/DialogItem";
 import {MessagePropsType} from "../components/Dialogs/Message/Message";
-import {rerenderEntireTree} from "../render";
 
+let rerenderEntireTree = (state: RootStateType) => {
+
+}
 
 export type ProfilePageType = {
     posts: Array<PostType>
@@ -58,4 +60,8 @@ export const addPost = () => {
 export const updateNewPostText = (newText: string) => {
     state.profilePage.newPostText = newText
     rerenderEntireTree(state)
+}
+
+export const subscribe = (observer: (state: RootStateType) => void) => {
+    rerenderEntireTree = observer
 }
