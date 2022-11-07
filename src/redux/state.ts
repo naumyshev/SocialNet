@@ -46,21 +46,24 @@ export const store = {
             ]
         }
     },
-    rerenderEntireTree (state: RootStateType)  {
+    getState() {
+        return this._state
+    },
+    _callSubscriber(state: RootStateType) {
 
     },
-    addPost () {
+    addPost() {
         const newPost: PostType = {id: 5, message: this._state.profilePage.newPostText, likesCount: 0}
         this._state.profilePage.posts.push(newPost)
         this._state.profilePage.newPostText = ''
-        this.rerenderEntireTree(this._state)
+        this._callSubscriber(this._state)
     },
-    updateNewPostText (newText: string) {
+    updateNewPostText(newText: string) {
         this._state.profilePage.newPostText = newText
-        this.rerenderEntireTree(this._state)
+        this._callSubscriber(this._state)
     },
-    subscribe (observer: (state: RootStateType) => void)  {
-        this.rerenderEntireTree = observer
+    subscribe(observer: (state: RootStateType) => void) {
+        this._callSubscriber = observer
     }
 }
 
