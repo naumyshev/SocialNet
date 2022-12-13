@@ -21,12 +21,12 @@ export type AddPostActionType = {
     type: 'ADD-POST'
 }
 
-export type UpdateNewPostText = {
+export type UpdateNewPostTextType = {
     type: 'UPDATE-NEW-POST-TEXT'
     newText: string
 }
 
-export type ActionType = AddPostActionType | UpdateNewPostText
+export type ActionType = AddPostActionType | UpdateNewPostTextType
 
 export const store = {
     _state: {
@@ -85,4 +85,8 @@ export const store = {
     }
 
 }
+
+export const addPostAC = (): AddPostActionType => ({type: 'ADD-POST'})
+
+export const updateNewPostAC = (text: string): UpdateNewPostTextType => ({type: "UPDATE-NEW-POST-TEXT", newText: text})
 

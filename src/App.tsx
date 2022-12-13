@@ -14,7 +14,6 @@ import {ActionType, RootStateType} from "./redux/state";
 type AppPropsType = {
     state: RootStateType
     dispatch: (action: ActionType) => void
-
 }
 
 function App(props: AppPropsType) {

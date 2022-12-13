@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./MyPosts.module.css";
 import {Post, PostType} from "./Post/Post";
-import {ActionType} from "../../../redux/state";
+import {ActionType, addPostAC,  updateNewPostAC} from "../../../redux/state";
 
 type MyPostsPropsType = {
     posts: Array<PostType>
@@ -17,17 +17,16 @@ export const MyPosts = (props: MyPostsPropsType) => {
 
     const addPost = () => {
         if (newPostElement.current) {
-            props.dispatch({type: "ADD-POST"})
+            props.dispatch(addPostAC())
         }
     }
 
     const onPostChange = () => {
         if (newPostElement.current) {
             const text = newPostElement.current.value
-            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: text})
+            props.dispatch(updateNewPostAC(text))
         }
     }
-
 
     return (
         <div className={s.postsBlock}>

@@ -9,7 +9,9 @@ import {BrowserRouter} from "react-router-dom";
 
 
 const rerenderEntireTree = (state: RootStateType) => {
+
     ReactDOM.render(
+
         <BrowserRouter>
             <App
                 state={state}
@@ -20,6 +22,6 @@ const rerenderEntireTree = (state: RootStateType) => {
     );
 }
 
-//rerenderEntireTree(store.getState())
+rerenderEntireTree(store.getState())
 
 store.subscribe(rerenderEntireTree)
