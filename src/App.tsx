@@ -9,11 +9,13 @@ import {Route} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {ActionType, RootStateType, StoreType} from "./redux/state";
+import {ProfilePageType, RootStateType, StoreType} from "./redux/state";
+import {DialogActionType} from "./redux/dialogs-reducer";
+import {ProfileActionType} from "./redux/profile-reducer";
 
 type AppPropsType = {
     state: RootStateType
-    dispatch: (action: ActionType) => void
+    dispatch: (action: ProfileActionType | DialogActionType) => void
     store: StoreType
 }
 
