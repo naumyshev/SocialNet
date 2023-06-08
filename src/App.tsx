@@ -9,7 +9,7 @@ import {Route} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {ProfilePageType, RootStateType, StoreType} from "./redux/state";
+import {ProfilePageType, RootStateType, StoreType} from "./redux/store";
 import {DialogActionType} from "./redux/dialogs-reducer";
 import {ProfileActionType} from "./redux/profile-reducer";
 

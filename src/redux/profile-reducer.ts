@@ -1,7 +1,7 @@
 import {
     ProfilePageType,
     RootStateType
-    } from "./state";
+    } from "./store";
 import {PostType} from "../components/Profile/MyPosts/Post/Post";
 import {DialogActionType} from "./dialogs-reducer";
 
@@ -16,7 +16,17 @@ export type UpdateNewPostTextActionType = {
 
 export type ProfileActionType = AddPostActionType | UpdateNewPostTextActionType
 
-export const profileReducer = (state: ProfilePageType, action: DialogActionType | ProfileActionType) => {
+const initialState = {
+    posts: [
+        {id: 1, message: 'Hi! How are you?', likesCount: 12},
+        {id: 2, message: 'My first post', likesCount: 1},
+        {id: 3, message: 'Yo!', likesCount: 1},
+        {id: 4, message: 'Yo! Yo!', likesCount: 1}
+    ],
+    newPostText: ''
+}
+
+export const profileReducer = (state: ProfilePageType = initialState, action: DialogActionType | ProfileActionType) => {
 
     switch (action.type) {
         case 'ADD-POST':
